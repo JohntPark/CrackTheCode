@@ -2,9 +2,18 @@ CREATE TABLE Username(
     Name_Id     SERIAL PRIMARY KEY,
     Name        varchar(50),
     Password    varchar(2000),
+    confirmPassword varchar(50),
     Email       varchar(2000)
 
 );
+
+CREATE TABLE SignUp(
+    SignUp_Id SERIAL PRIMARY KEY,
+    Name varchar(50),
+    Email varchar(2000),
+    Password varchar(50),
+    confirmPassword varchar(50),
+)
 
 CREATE TABLE Algorithms(
 
@@ -19,6 +28,7 @@ CREATE TABLE Puzzles(
     Question    varchar(2000),
     Answer      varchar(2000)
     
+
 
 );
 
@@ -50,6 +60,15 @@ VALUES
 ('Hemal', 'hemal123', 'hemal@gmail.com'),
 ('John', 'john123', 'john@gmail.com'),
 ('Jason', 'jason123', 'jason@gmail.com');
+
+INSERT INTO SignUp(name, email, password)
+VALUES
+
+('Hemal', 'hemal@gmail.com', 'hemal123'),
+('John', 'john@gmail.com', 'john123'),
+('Jason', 'jason@gmail.com', 'jason123' );
+
+
 
 INSERT INTO Algorithms(question, answer)
 VALUES
