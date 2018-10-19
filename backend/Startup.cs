@@ -4,11 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-// using Microsoft.Extensions.Logging;
-// using Microsoft.Extensions.Options;
-// using Microsoft.EntityFrameworkCore;
-// using Microsoft.IdentityModel.Tokens;
-// using Microsoft.AspNetCore.Authentication.JwtBearer;
+
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace ManPurse
 {
@@ -32,23 +33,7 @@ namespace ManPurse
             // Add Cors
             services.AddCors();
 
-            // services.AddAuthentication(JwtBearerDefaults.AddAuthenticationScheme).AddJwtBearer(options =>
-            // {
-                // options.TokenValidationParameters = new
-                // TokenValidationParameters
-                // {
-                //     ValidateLifetime = true,
-                //     ValidateIssuerSigningKey = true,
-                //     ValidateIssuer = false,
-                //     ValidateAudience = false,
-                //     IssuerSigningKey = new SymmetricSecurity(System.Text.Encoding.UTF8.GetBytes("password"))
 
-                // };
-
-            // }
-            // );
-        // }
-            
             
         }
 
@@ -65,8 +50,7 @@ namespace ManPurse
             }
              app.UseCors(builder => builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader());
 
-            // app.UseHttpsRedirection();
-            // app.UseAuthentication();
+
             app.UseMvc();
         }
     }

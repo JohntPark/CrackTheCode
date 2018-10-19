@@ -35,5 +35,18 @@ namespace ManPurse
             
             return Ok(_context.computerscience.ToList());
         }
+
+         [HttpPost]
+        public IActionResult Post ([FromBody]ComputerScience computerscience)
+        {
+            if(computerscience == null)
+            {
+                return BadRequest();
+
+            }
+            _context.computerscience.Add(computerscience);
+            _context.SaveChanges();
+            return Ok(computerscience);
+        }
     }
 }
