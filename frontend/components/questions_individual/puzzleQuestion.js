@@ -9,11 +9,27 @@ import {
 import Button from '../home_login_signup/button'
 
 
+
 class PuzzleQuestion extends Component {
+
+    state = {
+        questionInput: '',
+        answerInput: ''
+
+    }
 
     static navigationOptions = {
         header: null
     };
+
+    questionInputChange = (event) => {
+        this.setState({questionInput: event.target.value})
+    }
+
+    answerInputChange = (event) => {
+        this.setState({answerInput: event.target.value})
+    }
+
     navigateToPuzzle = () => {
         this.props.navigation.navigate("Puzzle");
     }
@@ -40,6 +56,10 @@ class PuzzleQuestion extends Component {
                     textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
                     />
                 </View>
+                <TextInput>
+                <input type="text" name="questionInput" value={this.state.questionInput} onChange={this.questionInputChange.bind(this)}/>
+                <input type="text" name="answerInput" value={this.state.answerInput} onChange={this.answerInputChange.bind(this)}/>
+                </TextInput>
                 </View>
 
                     {puzzle.map((x, questionindex) => (
@@ -51,8 +71,11 @@ class PuzzleQuestion extends Component {
                     <Text style = {styles.cardStyles}> Answer: {x.answer} </Text>
                     console.log(x)
                     </View >
+                    
                     </View>
                     ))}
+
+
             </View>
          );
     }

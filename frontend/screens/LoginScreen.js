@@ -47,17 +47,17 @@ _onPressButton=() => {
     return (
 
       <ImageBackground
-        source={require('./../assets/mathchalkboard.jpg')}
+        source={require('./../assets/interviewMain.jpg')}
         style={{ width: '100%', height: '100%' }}
       >
 
         <View style={container}>
 
-          <Text style={{ fontSize: 50, color: '', fontFamily: 'Verdana' }}></Text>
+          <Text style={{ fontSize: 50, color: 'black', fontFamily: 'Verdana' }}></Text>
 
           <View>
 
-            <Text style={{ color: 'white' }}>Username</Text>
+            <Text style={{ color: 'black' }}>Username</Text>
             <TextInput
               textAlign='center'
               onChangeText={username => { this.setState({ username }) }}
@@ -66,7 +66,7 @@ _onPressButton=() => {
 
             />
       
-            <Text style={{ color: 'white' }}>Password</Text>
+            <Text style={{ color: 'black' }}>Password</Text>
             <TextInput
               secureTextEntry
               textAlign='center'
@@ -74,7 +74,7 @@ _onPressButton=() => {
               value={password}
               style={[textInput, isConfirmed]}
             />
-            <Text style={{ color: 'white' }}>Confirm Password</Text>
+            <Text style={{ color: 'black' }}>Confirm Password</Text>
             <TextInput
               secureTextEntry
               textAlign='center'

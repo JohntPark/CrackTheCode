@@ -34,14 +34,30 @@ class ComputerScience extends Component {
                     />
                 </View>
                 </View>
-                <View style = {styles.questionCard}>
+                
+                
+                {computer_science.map((x, index) => (
+                    
+                    <View style = {styles.questionCard} key = {index}>
+                    <Button
+                    style={{ paddingRight: 2}}
+                    text = {x.question}
+                    onPress = {(index) => {this.navigateToQuestion(index)}}
+                    textStyle={{color: 'white', fontSize: 10,textAlign: 'center',}}
+                    />
+                    </View >
+                    
+
+                ))}
+                
+                {/* <View style = {styles.questionCard}>
                 <Button 
                     style={{ paddingRight: 2}}
                     text = "Question 1 "
                     onPress = {this.navigateToQuestion}
                     textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
                     />
-                </View >
+                </View > */}
 
 
 
