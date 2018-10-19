@@ -9,17 +9,15 @@ import {
 import Button from '../home_login_signup/button'
 
 
-class Design extends Component {
+class ComputerScienceQuestion extends Component {
 
     static navigationOptions = {
         header: null
     };
-    navigateToHome = () => {
-        this.props.navigation.navigate("Home");
+    navigateToComputerScience = () => {
+        this.props.navigation.navigate("ComputerScience");
     }
-    navigateToQuestion = () => {
-        this.props.navigation.navigate("DesignQuestion");
-    }
+    
 
     render() { 
         return ( 
@@ -29,18 +27,13 @@ class Design extends Component {
                     <Button 
                     style={{ paddingRight: 2}}
                     text = "◄ Back "
-                    onPress = {this.navigateToHome}
+                    onPress = {this.navigateToComputerScience}
                     textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
                     />
                 </View>
                 </View>
                 <View style = {styles.questionCard}>
-                    <Button
-                    style={{ paddingRight: 2}}
-                    text = "Question 1 "
-                    onPress = {this.navigateToQuestion}
-                    textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
-                    />
+                    <Text style={styles.cardStyles}>HERE IS THE QUESTION1</Text>
                 </View >
 
 
@@ -76,4 +69,4 @@ const styles = StyleSheet.create ({
     }
 })
  
-export default Design;
+export default ComputerScienceQuestion;

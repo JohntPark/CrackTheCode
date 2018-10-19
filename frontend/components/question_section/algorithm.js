@@ -6,6 +6,7 @@ import {
     ImageBackground,
     TextInput,
 } from 'react-native';
+import Button from '../home_login_signup/button'
 
 
 class Algorithms extends Component {
@@ -13,27 +14,35 @@ class Algorithms extends Component {
     static navigationOptions = {
         header: null
     };
+    navigateToHome = () => {
+        this.props.navigation.navigate("Home");
+    }
+    navigateToQuestion = () => {
+        this.props.navigation.navigate("AlgorithmQuestion");
+    }
 
     render() { 
         return ( 
             <View style = {styles.container}>
                 <View>
                 <View style={{alignItems: 'center', justifyContent: 'center', marginBottom: 15, borderRadius: 5, height: 50, borderWidth: 1, borderColor: 'white'}}>
-                    <Text style={{textAlign: 'center', color: 'white', fontSize: 30,paddingRight: 2}}>◄ Back </Text>
+                    <Button 
+                    style={{ paddingRight: 2}}
+                    text = "◄ Back "
+                    onPress = {this.navigateToHome}
+                    textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
+                    />
                 </View>
                 </View>
                 <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>Algorithms</Text>
+                    <Button 
+                    style={{ paddingRight: 2}}
+                    text = "Question 1 "
+                    onPress = {this.navigateToQuestion}
+                    textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
+                    />
                 </View >
-                <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>Puzzles </Text>
-                </View>
-                <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>Designs </Text>
-                </View >
-                <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>Computer Science </Text>
-                </View >
+
 
 
             </View>
@@ -62,7 +71,8 @@ const styles = StyleSheet.create ({
     cardStyles: {
         fontSize: 40,
         alignItems: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
     }
 })
  

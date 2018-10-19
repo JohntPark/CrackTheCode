@@ -6,6 +6,7 @@ import {
     ImageBackground,
     TextInput,
 } from 'react-native';
+import Button from "./button";
 
 
 class HomePage extends Component {
@@ -13,6 +14,19 @@ class HomePage extends Component {
     static navigationOptions = {
         header: null
     };
+
+    navigateToAlgorithms = () => {
+        this.props.navigation.navigate("Algorithms");
+    }
+    navigateToComputerScience = () => {
+        this.props.navigation.navigate("ComputerScience");
+    }
+    navigateToDesign = () => {
+        this.props.navigation.navigate("Design");
+    }
+    navigateToPuzzle = () => {
+        this.props.navigation.navigate("Puzzle");
+    }
 
     render() { 
         return ( 
@@ -26,17 +40,34 @@ class HomePage extends Component {
                 </View>
                 </View>
                 <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>Algorithms</Text>
+                    <Button
+                        text = "Algorithms"
+                        onPress = {this.navigateToAlgorithms}
+                        textStyle = {styles.cardStyles}
+                    />
                 </View >
                 <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>Puzzles </Text>
-                </View>
-                <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>Designs </Text>
+                    <Button
+                        text = "Computer Science"
+                        onPress = {this.navigateToComputerScience}
+                        textStyle = {styles.cardStyles}
+                    />
                 </View >
                 <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>Computer Science </Text>
+                    <Button
+                        text = "Design"
+                        onPress = {this.navigateToDesign}
+                        textStyle = {styles.cardStyles}
+                    />
                 </View >
+                <View style = {styles.questionCard}>
+                    <Button
+                        text = "Puzzle"
+                        onPress = {this.navigateToPuzzle}
+                        textStyle = {styles.cardStyles}
+                    />
+                </View >
+
 
 
             </View>
@@ -65,7 +96,8 @@ const styles = StyleSheet.create ({
     cardStyles: {
         fontSize: 40,
         alignItems: 'center',
-        textAlign: 'center'
+        textAlign: 'center',
+        color: 'white'
     }
 })
  
