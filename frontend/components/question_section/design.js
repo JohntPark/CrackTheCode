@@ -3,6 +3,7 @@ import {
     StyleSheet,
     Text,
     View,
+    ScrollView,
     ImageBackground,
     TextInput,
 } from 'react-native';
@@ -17,13 +18,16 @@ class Design extends Component {
     navigateToHome = () => {
         this.props.navigation.navigate("Home");
     }
-    navigateToQuestion = () => {
-        this.props.navigation.navigate("DesignQuestion");
+    navigateToQuestion = (index) => {
+        let design = this.props.navigation.getParam('design', 'Couldnt get design');
+        this.props.navigation.navigate("DesignQuestion", {design, index});
     }
 
     render() {
+        let design = this.props.navigation.getParam('design', 'Couldnt get design');
         return (
             <View style={styles.container}>
+            <ScrollView>
                 <View>
                     <View style={{ alignItems: 'center', justifyContent: 'center', marginBottom: 15, borderRadius: 5, height: 50, borderWidth: 1, borderColor: 'white' }}>
                         <Button
@@ -41,8 +45,8 @@ class Design extends Component {
                         <Button
                             style={{ paddingRight: 2 }}
                             text={x.question}
-                            onPress={(index) => { this.navigateToQuestion(index) }}
-                            textStyle={{ color: 'white', fontSize: 10, textAlign: 'center', }}
+                            onPress={() => { this.navigateToQuestion(index) }}
+                            textStyle={{ color: 'white', fontSize: 25, textAlign: 'center', }}
                         />
                     </View >
 
@@ -58,7 +62,7 @@ class Design extends Component {
                 </View > */}
 
 
-
+                </ScrollView>
             </View>
         );
     }
@@ -83,7 +87,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
     },
     cardStyles: {
-        fontSize: 40,
+        fontSize: 25,
         alignItems: 'center',
         textAlign: 'center',
         color: 'white'

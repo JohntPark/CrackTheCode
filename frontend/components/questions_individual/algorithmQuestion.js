@@ -20,6 +20,8 @@ class AlgorithmQuestion extends Component {
     
 
     render() { 
+        let algorithm = this.props.navigation.getParam('algorithm', 'Couldnt get algorithm');
+        let index = this.props.navigation.getParam('index', 'Couldnt get index');
         return ( 
             <View style = {styles.container}>
                 <View>
@@ -32,9 +34,16 @@ class AlgorithmQuestion extends Component {
                     />
                 </View>
                 </View>
-                <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>HERE IS THE QUESTION2</Text>
-                </View >
+
+
+          <View>
+            <View style={styles.questionCard} >
+              <Text style={styles.cardStyles}> Question: {algorithm[index].question} </Text>
+            </View>
+            <View style={styles.questionCard}>
+              <Text style={styles.cardStyles}> Answer: {algorithm[index].answer} </Text>
+            </View>
+          </View>
 
 
 
@@ -55,14 +64,14 @@ const styles = StyleSheet.create ({
     questionCard:  {
         marginBottom: 35,
         borderWidth: 1,
-        height: 150,
+        height: 'auto',
         borderColor: 'white',
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center'
     },
     cardStyles: {
-        fontSize: 40,
+        fontSize: 15,
         alignItems: 'center',
         textAlign: 'center',
         color: 'white'

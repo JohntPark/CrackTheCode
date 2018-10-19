@@ -20,6 +20,8 @@ class ComputerScienceQuestion extends Component {
     
 
     render() { 
+        let computerscience = this.props.navigation.getParam('computerscience', 'Couldnt get computerscience');
+        let index = this.props.navigation.getParam('index', 'Couldnt get index');
         return ( 
             <View style = {styles.container}>
                 <View>
@@ -32,9 +34,16 @@ class ComputerScienceQuestion extends Component {
                     />
                 </View>
                 </View>
-                <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>HERE IS THE QUESTION1</Text>
-                </View >
+
+
+          <View>
+            <View style={styles.questionCard} >
+              <Text style={styles.cardStyles}> Question: {computerscience[index].question} </Text>
+            </View>
+            <View style={styles.questionCard}>
+              <Text style={styles.cardStyles}> Answer: {computerscience[index].answer} </Text>
+            </View>
+          </View>
 
 
 
@@ -55,14 +64,14 @@ const styles = StyleSheet.create ({
     questionCard:  {
         marginBottom: 35,
         borderWidth: 1,
-        height: 150,
+        height: 'auto',
         borderColor: 'white',
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center'
     },
     cardStyles: {
-        fontSize: 40,
+        fontSize: 25,
         alignItems: 'center',
         textAlign: 'center',
         color: 'white'

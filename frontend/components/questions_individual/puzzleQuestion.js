@@ -56,24 +56,19 @@ class PuzzleQuestion extends Component {
                     textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
                     />
                 </View>
-                <TextInput>
-                <input type="text" name="questionInput" value={this.state.questionInput} onChange={this.questionInputChange.bind(this)}/>
-                <input type="text" name="answerInput" value={this.state.answerInput} onChange={this.answerInputChange.bind(this)}/>
-                </TextInput>
+                {/* <TextInput onChangeText = {this.questionInputChange} value={this.state.questionInput} />
+                <TextInput onChangeText = {this.answerInputChange} value={this.state.answerInput} /> */}
+
                 </View>
 
-                    {puzzle.map((x, questionindex) => (
-                    <View>
-                    <View style = {styles.questionCard} key={questionindex}>
-                    <Text style={styles.cardStyles}> Question: {x.question} </Text>
-                    </View>
-                    <View style = {styles.questionCard}>
-                    <Text style = {styles.cardStyles}> Answer: {x.answer} </Text>
-                    console.log(x)
-                    </View >
-                    
-                    </View>
-                    ))}
+          <View>
+            <View style={styles.questionCard} >
+              <Text style={styles.cardStyles}> Question: {puzzle[index].question} </Text>
+            </View>
+            <View style={styles.questionCard}>
+              <Text style={styles.cardStyles}> Answer: {puzzle[index].answer} </Text>
+            </View>
+          </View>
 
 
             </View>
@@ -93,14 +88,14 @@ const styles = StyleSheet.create ({
     questionCard:  {
         marginBottom: 35,
         borderWidth: 1,
-        height: 150,
+        height: 'auto',
         borderColor: 'white',
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center'
     },
     cardStyles: {
-        fontSize: 10,
+        fontSize: 15,
         alignItems: 'center',
         textAlign: 'center',
         color: 'white'
