@@ -12,8 +12,19 @@ import Button from '../home_login_signup/button'
 
 
 class Puzzle extends Component {
+    state = {
+        questionInput: '',
+        answerInput: ''
 
+    }
 
+    questionInputChange = (event) => {
+        this.setState({questionInput: event})
+    }
+
+    answerInputChange = (event) => {
+        this.setState({answerInput: event})
+    }
 
     static navigationOptions = {
         header: null
@@ -72,9 +83,15 @@ class Puzzle extends Component {
 
                 ))}
 
-
-
-
+                <View style ={{marginTop: 15}}>
+                    <Text style ={{color: 'whitesmoke', fontWeight: 'bold', textAlign: 'center', fontSize: 20}}> Submit Your Own Question and Answer! </Text>
+                <TextInput style ={styles.textInput}  placeholder= 'question' onChangeText = {this.questionInputChange} value={this.state.questionInput} />
+                <TextInput style ={styles.textInput} placeholder = 'answer' onChangeText = {this.answerInputChange} value={this.state.answerInput} />
+                <Button 
+                text = "Submit!"
+                textStyle = {{color: 'whitesmoke', fontSize: 30, textAlign: 'center', borderRadius: 1, borderWidth: 1, borderColor: 'white', marginTop: 9}}
+                />
+                </View>
 
             </ScrollView>
             </View>
@@ -106,7 +123,19 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         textAlign: 'center',
         color: 'white'
-    }
+    },
+    textInput: {
+        backgroundColor: "transparent",
+        height: 200,
+        width: '100%',
+        borderRadius: 15,
+        borderWidth: 2,
+        paddingLeft: 5,
+        borderColor: "white",
+        color: "white",
+        marginTop: 0,
+        fontFamily: 'AmericanTypewriter-Bold'
+      }
 })
  
 export default Puzzle;

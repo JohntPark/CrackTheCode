@@ -12,23 +12,13 @@ import Button from '../home_login_signup/button'
 
 class PuzzleQuestion extends Component {
 
-    state = {
-        questionInput: '',
-        answerInput: ''
 
-    }
 
     static navigationOptions = {
         header: null
     };
 
-    questionInputChange = (event) => {
-        this.setState({questionInput: event.target.value})
-    }
 
-    answerInputChange = (event) => {
-        this.setState({answerInput: event.target.value})
-    }
 
     navigateToPuzzle = () => {
         this.props.navigation.navigate("Puzzle");
@@ -56,8 +46,7 @@ class PuzzleQuestion extends Component {
                     textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
                     />
                 </View>
-                {/* <TextInput onChangeText = {this.questionInputChange} value={this.state.questionInput} />
-                <TextInput onChangeText = {this.answerInputChange} value={this.state.answerInput} /> */}
+
 
                 </View>
 
