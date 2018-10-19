@@ -11557,23 +11557,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/jasonyee/.nuget/packages/": {},
+    "/Users/JohnPark/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jasonyee/Desktop/CrackTheCode/backend/ManPurse.csproj",
+      "projectUniqueName": "/Users/JohnPark/Desktop/ManPurse/backend/ManPurse.csproj",
       "projectName": "ManPurse",
-      "projectPath": "/Users/jasonyee/Desktop/CrackTheCode/backend/ManPurse.csproj",
-      "packagesPath": "/Users/jasonyee/.nuget/packages/",
-      "outputPath": "/Users/jasonyee/Desktop/CrackTheCode/backend/obj/",
+      "projectPath": "/Users/JohnPark/Desktop/ManPurse/backend/ManPurse.csproj",
+      "packagesPath": "/Users/JohnPark/.nuget/packages/",
+      "outputPath": "/Users/JohnPark/Desktop/ManPurse/backend/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/jasonyee/.nuget/NuGet/NuGet.Config"
+        "/Users/JohnPark/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
