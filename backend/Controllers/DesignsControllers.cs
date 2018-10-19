@@ -35,6 +35,19 @@ namespace ManPurse
             
             return Ok(_context.designs.ToList());
         }
+
+         [HttpPost]
+        public IActionResult Post ([FromBody]Designs designs)
+        {
+            if(designs == null)
+            {
+                return BadRequest();
+
+            }
+            _context.designs.Add(designs);
+            _context.SaveChanges();
+            return Ok(designs);
+        }
     }
 }
 

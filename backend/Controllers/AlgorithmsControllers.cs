@@ -35,5 +35,18 @@ namespace ManPurse
             
             return Ok(_context.algorithms.ToList());
         }
+
+         [HttpPost]
+        public IActionResult Post ([FromBody]Algorithms algorithms)
+        {
+            if(algorithms == null)
+            {
+                return BadRequest();
+
+            }
+            _context.algorithms.Add(algorithms);
+            _context.SaveChanges();
+            return Ok(algorithms);
+        }
     }
 }

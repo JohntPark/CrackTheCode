@@ -35,6 +35,19 @@ namespace ManPurse
             
             return Ok(_context.username.ToList());
         }
+
+         [HttpPost]
+        public IActionResult Post ([FromBody]Username username)
+        {
+            if(username == null)
+            {
+                return BadRequest();
+
+            }
+            _context.username.Add(username);
+            _context.SaveChanges();
+            return Ok(username);
+        }
     }
 
 
