@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, TextInput, ImageBackground } from 'react-native'
-import Button from './button'
+import Button from '../components/home_login_signup/button'
 
 class Login extends Component {
   state = {

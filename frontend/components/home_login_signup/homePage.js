@@ -61,6 +61,10 @@ class HomePage extends Component {
     )  
     }
 
+goToLogin = () => {
+    this.props.navigation.navigate("Login")
+}
+
 
     // navigateToPuzzle = () => {
     //     this.props.navigation.navigate("Puzzle");
@@ -73,8 +77,13 @@ class HomePage extends Component {
                 <View>
                     <Text style={{fontWeight: 'bold', fontSize: 20, color: 'white'}}> CrackTheCode </Text>
                 </View>
-                <View style={{alignItems: 'center', paddingLeft: 8, marginBottom: 15, borderRadius: 5, borderWidth: 1, width: 60, height: 30, borderColor: 'white', flexDirection: 'row' }}>
-                    <Text> Login </Text>
+                <View>
+                <Button
+                text = "login"
+                textStyle = {{color: 'white'}}
+                onPress = {this.goToLogin}
+                style ={{justifyContent: 'center', alignItems: 'center', marginBottom: 15, borderRadius: 5, borderWidth: 1, width: 90, height: 30, borderColor: 'white', flexDirection: 'row'}}
+                />
                 </View>
                 </View>
                 <View style = {styles.questionCard}>

@@ -11,6 +11,8 @@ import AlgorithmQuestion from './components/questions_individual/algorithmQuesti
 import ComputerScienceQuestion from './components/questions_individual/computerScienceQuestion';
 import DesignQuestion from './components/questions_individual/designQuestion';
 import PuzzleQuestion from './components/questions_individual/puzzleQuestion';
+// import SignUp from './screens/SignUp';
+// import Login from './screens/LoginScreen';
 // import SignUp from './components/home_login_signup/signUp';
 
 const RootStack = createStackNavigator(
@@ -23,7 +25,9 @@ const RootStack = createStackNavigator(
     AlgorithmQuestion: AlgorithmQuestion,
     ComputerScienceQuestion: ComputerScienceQuestion,
     DesignQuestion: DesignQuestion,
-    PuzzleQuestion: PuzzleQuestion
+    PuzzleQuestion: PuzzleQuestion,
+    // SignUp: SignUp,
+    // Login: Login
   },
   {
     initialRouteName: "Home"

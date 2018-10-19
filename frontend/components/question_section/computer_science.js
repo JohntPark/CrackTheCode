@@ -55,14 +55,27 @@ class ComputerScience extends Component {
 
                 ))}
                 
-                {/* <View style = {styles.questionCard}>
+                <View style ={{marginTop: 15}}>
+                    <Text style ={{color: 'whitesmoke', fontWeight: 'bold', textAlign: 'center', fontSize: 20}}> Submit Your Own Question and Answer! </Text>
+                <TextInput
+                placeholder='Question'
+                textAlign ='center'
+                OnChangeText={this.questionInputChange}
+                value= {this.userQuestion}
+                style={styles.textInput}
+                />
+               < TextInput
+                placeholder= 'Answer'
+                textAlign ='center'
+                OnChangeText={this.answerInputChange}
+                value= {this.userAnswer}
+                style={styles.textInput}
+                />
                 <Button 
-                    style={{ paddingRight: 2}}
-                    text = "Question 1 "
-                    onPress = {this.navigateToQuestion}
-                    textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
-                    />
-                </View > */}
+                text = "Submit!"
+                textStyle = {{color: 'whitesmoke', fontSize: 30, textAlign: 'center', borderRadius: 1, borderWidth: 1, borderColor: 'white', marginTop: 9}}
+                />
+                </View>
 
 
             </ScrollView>
@@ -94,7 +107,19 @@ const styles = StyleSheet.create ({
         alignItems: 'center',
         textAlign: 'center',
         color: 'white'
-    }
+    },
+    textInput: {
+        backgroundColor: "transparent",
+        height: 200,
+        width: '100%',
+        borderRadius: 15,
+        borderWidth: 2,
+        paddingLeft: 5,
+        borderColor: "white",
+        color: "white",
+        marginTop: 0,
+        fontFamily: 'AmericanTypewriter-Bold'
+      }
 })
  
 export default ComputerScience;

@@ -8,22 +8,34 @@ import {
     ScrollView
 } from 'react-native';
 import Button from '../home_login_signup/button'
+import axios from 'axios'
 
 
 
 class Puzzle extends Component {
     state = {
-        questionInput: '',
-        answerInput: ''
+        userQuestion: '',
+        userAnswer: ''
 
+    }
+
+    submitPuzzle = () => {
+        axios.post("http://localhost:5000/api/puzzles")
+        .then(repsonse => {
+            this.state.userQuestion = this.questionInputChange
+            this.state.userAnswer = this.answerInputChange
+            let puzzle= response.data;
+            console.log(puzzle);
+        })
+        
     }
 
     questionInputChange = (event) => {
-        this.setState({questionInput: event})
+        this.setState({userQuestion: event})
     }
 
     answerInputChange = (event) => {
-        this.setState({answerInput: event})
+        this.setState({userAnswer: event})
     }
 
     static navigationOptions = {
@@ -42,6 +54,7 @@ class Puzzle extends Component {
     }
 
     render() { 
+        let {userAnswer, userQuestion} = this.state
         let puzzle = this.props.navigation.getParam('puzzle', 'Couldnt get puzzle');
         // console.log(this.props.navigation.getParam('puzzle', 'couldnt get puzzle'))
         console.log("Here is my imported puzzle object", puzzle);
@@ -79,14 +92,25 @@ class Puzzle extends Component {
                     textStyle={{color: 'white', fontSize: 25,textAlign: 'center',}}
                     />
                     </View >
-                    
+
 
                 ))}
-
                 <View style ={{marginTop: 15}}>
                     <Text style ={{color: 'whitesmoke', fontWeight: 'bold', textAlign: 'center', fontSize: 20}}> Submit Your Own Question and Answer! </Text>
-                <TextInput style ={styles.textInput}  placeholder= 'question' onChangeText = {this.questionInputChange} value={this.state.questionInput} />
-                <TextInput style ={styles.textInput} placeholder = 'answer' onChangeText = {this.answerInputChange} value={this.state.answerInput} />
+                <TextInput
+                placeholder='Question'
+                textAlign ='center'
+                OnChangeText={this.questionInputChange}
+                value= {this.userQuestion}
+                style={styles.textInput}
+                />
+               < TextInput
+                placeholder= 'Answer'
+                textAlign ='center'
+                OnChangeText={this.answerInputChange}
+                value= {this.userAnswer}
+                style={styles.textInput}
+                />
                 <Button 
                 text = "Submit!"
                 textStyle = {{color: 'whitesmoke', fontSize: 30, textAlign: 'center', borderRadius: 1, borderWidth: 1, borderColor: 'white', marginTop: 9}}
