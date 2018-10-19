@@ -12,7 +12,7 @@ namespace ManPurse
         public string password { get; set;}
 
         public string email { get; set; }
-        public string confirmpassowrd { get; set;}
+        public string confirmpassword { get; set;}
 
         public Username()
         {

@@ -37,6 +37,19 @@ namespace ManPurse
             
             return Ok(_context.puzzles.ToList());
         }
+
+        [HttpPost]
+        public IActionResult Post ([FromBody]Puzzles puzzles)
+        {
+            if(puzzles == null)
+            {
+                return BadRequest();
+
+            }
+            _context.puzzles.Add(puzzles);
+            _context.SaveChanges();
+            return Ok(puzzles);
+        }
     }
 }
 

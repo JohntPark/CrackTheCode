@@ -35,6 +35,18 @@ namespace ManPurse
             
             return Ok(_context.signup.ToList());
         }
+         [HttpPost]
+        public IActionResult Post ([FromBody]SignUp signUp)
+        {
+            if(signUp == null)
+            {
+                return BadRequest();
+
+            }
+            _context.signup.Add(signUp);
+            _context.SaveChanges();
+            return Ok(signUp);
+        }
     }
 
 
