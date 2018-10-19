@@ -11600,23 +11600,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/Hemal/.nuget/packages/": {},
+    "/Users/JohnPark/.nuget/packages/": {},
     "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Hemal/Downloads/CrackTheCode-master/CrackTheCode/backend/ManPurse.csproj",
+      "projectUniqueName": "/Users/JohnPark/Desktop/ManPurse/backend/ManPurse.csproj",
       "projectName": "ManPurse",
-      "projectPath": "/Users/Hemal/Downloads/CrackTheCode-master/CrackTheCode/backend/ManPurse.csproj",
-      "packagesPath": "/Users/Hemal/.nuget/packages/",
-      "outputPath": "/Users/Hemal/Downloads/CrackTheCode-master/CrackTheCode/backend/obj/",
+      "projectPath": "/Users/JohnPark/Desktop/ManPurse/backend/ManPurse.csproj",
+      "packagesPath": "/Users/JohnPark/.nuget/packages/",
+      "outputPath": "/Users/JohnPark/Desktop/ManPurse/backend/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/Hemal/.nuget/NuGet/NuGet.Config"
+        "/Users/JohnPark/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
