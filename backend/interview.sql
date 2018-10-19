@@ -11,9 +11,8 @@ CREATE TABLE SignUp(
     SignUp_Id SERIAL PRIMARY KEY,
     Name varchar(50),
     Email varchar(2000),
-    Password varchar(50),
-    confirmPassword varchar(50),
-)
+    Password varchar(50)
+);
 
 CREATE TABLE Algorithms(
 

@@ -5,11 +5,15 @@ import {
     View,
     ImageBackground,
     TextInput,
+    ScrollView
 } from 'react-native';
 import Button from '../home_login_signup/button'
 
 
+
 class Puzzle extends Component {
+
+
 
     static navigationOptions = {
         header: null
@@ -17,13 +21,31 @@ class Puzzle extends Component {
     navigateToHome = () => {
         this.props.navigation.navigate("Home");
     }
-    navigateToQuestion = () => {
-        this.props.navigation.navigate("PuzzleQuestion");
+    navigateToQuestion = (index) => {
+        // console.log("Navigate to question: ", puzzle) //undefined
+        // let puzzle = { a:1, b:2}
+         let puzzle = this.props.navigation.getParam('puzzle', 'Couldnt get puzzle');
+
+        this.props.navigation.navigate("PuzzleQuestion", {puzzle, index});
+        
     }
 
     render() { 
+        let puzzle = this.props.navigation.getParam('puzzle', 'Couldnt get puzzle');
+        // console.log(this.props.navigation.getParam('puzzle', 'couldnt get puzzle'))
+        console.log("Here is my imported puzzle object", puzzle);
+        for(var i = 0; i < puzzle.length; i++) {
+            console.log(puzzle[i].question)
+        }
+        // console.log(this.props.navigation.getParam('question', 'couldnt get question'))
+        // console.log(this.props.navigation.getParam('answer', 'couldnt get answer'))
+        // console.log(this.props.navigation.getParam('puzzles_id', 'coudlnt get puzzles_id'))
+        // let interview = this.props
+        // console.log(interview.question)
+
         return ( 
             <View style = {styles.container}>
+                <ScrollView>
                 <View>
                 <View style={{alignItems: 'center', justifyContent: 'center', marginBottom: 15, borderRadius: 5, height: 50, borderWidth: 1, borderColor: 'white'}}>
                     <Button 
@@ -34,17 +56,27 @@ class Puzzle extends Component {
                     />
                 </View>
                 </View>
-                <View style = {styles.questionCard}>
+
+                
+                {puzzle.map((x, index) => (
+                    
+                    <View style = {styles.questionCard} key = {index}>
                     <Button
                     style={{ paddingRight: 2}}
-                    text = "Question 1 "
-                    onPress = {this.navigateToQuestion}
-                    textStyle={{color: 'white', fontSize: 30,textAlign: 'center',}}
+                    text = {x.question}
+                    onPress = {(index) => {this.navigateToQuestion(index)}}
+                    textStyle={{color: 'white', fontSize: 10,textAlign: 'center',}}
                     />
-                </View >
+                    </View >
+                    
+
+                ))}
 
 
 
+
+
+            </ScrollView>
             </View>
          );
     }
@@ -57,10 +89,11 @@ const styles = StyleSheet.create ({
         paddingTop: 80,
         paddingLeft: 60,
         paddingRight: 60,
-        alignSelf: 'stretch'
+        alignSelf: 'stretch',
+        paddingBottom: 100
     },
     questionCard:  {
-        marginBottom: 35,
+        marginBottom: 15,
         borderWidth: 1,
         height: 150,
         borderColor: 'white',

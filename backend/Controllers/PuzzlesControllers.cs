@@ -14,6 +14,8 @@ namespace ManPurse
     public class PuzzlesController : ControllerBase
     {
 
+        
+
         private ApiContext _context;
 
         public PuzzlesController(ApiContext context)

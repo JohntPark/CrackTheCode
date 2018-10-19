@@ -7,6 +7,7 @@ import {
     TextInput,
 } from 'react-native';
 import Button from "./button";
+import axios from 'axios';
 
 
 class HomePage extends Component {
@@ -15,6 +16,17 @@ class HomePage extends Component {
         header: null
     };
 
+
+    grabPuzzleAnswer = () => {
+        axios.get("http://localhost:5000/api/puzzles")
+        .then(response => {
+            let puzzle = response.data;
+            console.log(puzzle);
+            this.props.navigation.navigate("Puzzle", {puzzle})
+            console.log(puzzle[0].question)
+        },
+    )
+    }
     navigateToAlgorithms = () => {
         this.props.navigation.navigate("Algorithms");
     }
@@ -24,9 +36,9 @@ class HomePage extends Component {
     navigateToDesign = () => {
         this.props.navigation.navigate("Design");
     }
-    navigateToPuzzle = () => {
-        this.props.navigation.navigate("Puzzle");
-    }
+    // navigateToPuzzle = () => {
+    //     this.props.navigation.navigate("Puzzle");
+    // }
 
     render() { 
         return ( 
@@ -63,7 +75,7 @@ class HomePage extends Component {
                 <View style = {styles.questionCard}>
                     <Button
                         text = "Puzzle"
-                        onPress = {this.navigateToPuzzle}
+                        onPress = {this.grabPuzzleAnswer}
                         textStyle = {styles.cardStyles}
                     />
                 </View >

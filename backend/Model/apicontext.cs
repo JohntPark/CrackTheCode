@@ -7,6 +7,7 @@ namespace ManPurse
     public class ApiContext: DbContext
     {
         public DbSet<Username> username { get; set; }
+        public DbSet<SignUp> signup { get; set; }
 
         public DbSet<Puzzles> puzzles { get; set; }
         public DbSet<ComputerScience> computerscience { get; set; }

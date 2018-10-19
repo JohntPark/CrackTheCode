@@ -20,6 +20,15 @@ class PuzzleQuestion extends Component {
     
 
     render() { 
+        let puzzle = this.props.navigation.getParam('puzzle', 'Couldnt get puzzle');
+        let index = this.props.navigation.getParam('index', 'Couldnt get index');
+        // console.log(this.props.navigation.getParam('puzzle', 'couldnt get puzzle'))
+        console.log("Here is my imported puzzle object", puzzle);
+        console.log("Here is my imported index ", index);
+        for(var i = 0; i < puzzle.length; i++) {
+            console.log(puzzle[i].question)
+        }
+        console.log(puzzle)
         return ( 
             <View style = {styles.container}>
                 <View>
@@ -32,12 +41,18 @@ class PuzzleQuestion extends Component {
                     />
                 </View>
                 </View>
-                <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>HERE IS THE QUESTION4</Text>
-                </View >
 
-
-
+                    {puzzle.map((x, questionindex) => (
+                    <View>
+                    <View style = {styles.questionCard} key={questionindex}>
+                    <Text style={styles.cardStyles}> Question: {x.question} </Text>
+                    </View>
+                    <View style = {styles.questionCard}>
+                    <Text style = {styles.cardStyles}> Answer: {x.answer} </Text>
+                    console.log(x)
+                    </View >
+                    </View>
+                    ))}
             </View>
          );
     }
@@ -62,7 +77,7 @@ const styles = StyleSheet.create ({
         justifyContent: 'center'
     },
     cardStyles: {
-        fontSize: 40,
+        fontSize: 10,
         alignItems: 'center',
         textAlign: 'center',
         color: 'white'

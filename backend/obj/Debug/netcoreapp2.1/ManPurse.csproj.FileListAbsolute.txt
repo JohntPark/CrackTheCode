@@ -12,3 +12,17 @@
 /Users/jasonyee/Desktop/CrackTheCode/backend/obj/Debug/netcoreapp2.1/ManPurse.RazorTargetAssemblyInfo.cache
 /Users/jasonyee/Desktop/CrackTheCode/backend/obj/Debug/netcoreapp2.1/ManPurse.dll
 /Users/jasonyee/Desktop/CrackTheCode/backend/obj/Debug/netcoreapp2.1/ManPurse.pdb
+/Users/JohnPark/Desktop/ManPurse/backend/bin/Debug/netcoreapp2.1/ManPurse.deps.json
+/Users/JohnPark/Desktop/ManPurse/backend/bin/Debug/netcoreapp2.1/ManPurse.runtimeconfig.json
+/Users/JohnPark/Desktop/ManPurse/backend/bin/Debug/netcoreapp2.1/ManPurse.runtimeconfig.dev.json
+/Users/JohnPark/Desktop/ManPurse/backend/bin/Debug/netcoreapp2.1/ManPurse.dll
+/Users/JohnPark/Desktop/ManPurse/backend/bin/Debug/netcoreapp2.1/ManPurse.pdb
+/Users/JohnPark/Desktop/ManPurse/backend/obj/Debug/netcoreapp2.1/ManPurse.csprojAssemblyReference.cache
+/Users/JohnPark/Desktop/ManPurse/backend/obj/Debug/netcoreapp2.1/ManPurse.csproj.CoreCompileInputs.cache
+/Users/JohnPark/Desktop/ManPurse/backend/obj/Debug/netcoreapp2.1/ManPurse.RazorAssemblyInfo.cache
+/Users/JohnPark/Desktop/ManPurse/backend/obj/Debug/netcoreapp2.1/ManPurse.RazorAssemblyInfo.cs
+/Users/JohnPark/Desktop/ManPurse/backend/obj/Debug/netcoreapp2.1/ManPurse.AssemblyInfoInputs.cache
+/Users/JohnPark/Desktop/ManPurse/backend/obj/Debug/netcoreapp2.1/ManPurse.AssemblyInfo.cs
+/Users/JohnPark/Desktop/ManPurse/backend/obj/Debug/netcoreapp2.1/ManPurse.RazorTargetAssemblyInfo.cache
+/Users/JohnPark/Desktop/ManPurse/backend/obj/Debug/netcoreapp2.1/ManPurse.dll
+/Users/JohnPark/Desktop/ManPurse/backend/obj/Debug/netcoreapp2.1/ManPurse.pdb
