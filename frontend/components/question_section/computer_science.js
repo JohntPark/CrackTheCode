@@ -4,6 +4,7 @@ import {
     Text,
     View,
     ImageBackground,
+    ScrollView,
     TextInput,
 } from 'react-native';
 import Button from '../home_login_signup/button'
@@ -17,13 +18,17 @@ class ComputerScience extends Component {
     navigateToHome = () => {
         this.props.navigation.navigate("Home");
     }
-    navigateToQuestion = () => {
-        this.props.navigation.navigate("ComputerScienceQuestion");
+    navigateToQuestion = (index) => {
+        let computerscience = this.props.navigation.getParam('computerscience', 'Couldnt get computerscience');
+
+        this.props.navigation.navigate("ComputerScienceQuestion", {computerscience, index});
     }
 
     render() { 
+        let computerscience = this.props.navigation.getParam('computerscience', 'Couldnt get puzzle');
         return ( 
             <View style = {styles.container}>
+                <ScrollView>
                 <View>
                 <View style={{alignItems: 'center', justifyContent: 'center', marginBottom: 15, borderRadius: 5, height: 50, borderWidth: 1, borderColor: 'white'}}>
                     <Button 
@@ -36,14 +41,14 @@ class ComputerScience extends Component {
                 </View>
                 
                 
-                {computer_science.map((x, index) => (
+                {computerscience.map((x, index) => (
                     
                     <View style = {styles.questionCard} key = {index}>
                     <Button
                     style={{ paddingRight: 2}}
                     text = {x.question}
-                    onPress = {(index) => {this.navigateToQuestion(index)}}
-                    textStyle={{color: 'white', fontSize: 10,textAlign: 'center',}}
+                    onPress = {() => {this.navigateToQuestion(index)}}
+                    textStyle={{color: 'white', fontSize: 25,textAlign: 'center',}}
                     />
                     </View >
                     
@@ -60,7 +65,7 @@ class ComputerScience extends Component {
                 </View > */}
 
 
-
+            </ScrollView>
             </View>
          );
     }

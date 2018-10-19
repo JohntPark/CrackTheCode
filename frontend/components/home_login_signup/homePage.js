@@ -27,15 +27,41 @@ class HomePage extends Component {
         },
     )
     }
-    navigateToAlgorithms = () => {
-        this.props.navigation.navigate("Algorithms");
+
+    grabAlgorithmAnswer = () => {
+        axios.get("http://localhost:5000/api/algorithms")
+        .then(response => {
+            let algorithm = response.data;
+            console.log(algorithm);
+            this.props.navigation.navigate("Algorithms", {algorithm})
+            console.log(algorithm[0].question)
+        },
+    )  
     }
-    navigateToComputerScience = () => {
-        this.props.navigation.navigate("ComputerScience");
+
+    grabComputerScienceAnswer = () => {
+        axios.get("http://localhost:5000/api/computerscience")
+        .then(response => {
+            let computerscience = response.data;
+            console.log(computerscience);
+            this.props.navigation.navigate("ComputerScience", {computerscience})
+            console.log(computerscience[0].question)
+        },
+    )  
     }
-    navigateToDesign = () => {
-        this.props.navigation.navigate("Design");
+
+    grabDesignAnswer = () => {
+        axios.get("http://localhost:5000/api/designs")
+        .then(response => {
+            let design = response.data;
+            console.log(design);
+            this.props.navigation.navigate("Design", {design})
+            console.log(design[0].question)
+        },
+    )  
     }
+
+
     // navigateToPuzzle = () => {
     //     this.props.navigation.navigate("Puzzle");
     // }
@@ -54,21 +80,21 @@ class HomePage extends Component {
                 <View style = {styles.questionCard}>
                     <Button
                         text = "Algorithms"
-                        onPress = {this.navigateToAlgorithms}
+                        onPress = {this.grabAlgorithmAnswer}
                         textStyle = {styles.cardStyles}
                     />
                 </View >
                 <View style = {styles.questionCard}>
                     <Button
                         text = "Computer Science"
-                        onPress = {this.navigateToComputerScience}
+                        onPress = {this.grabComputerScienceAnswer}
                         textStyle = {styles.cardStyles}
                     />
                 </View >
                 <View style = {styles.questionCard}>
                     <Button
                         text = "Design"
-                        onPress = {this.navigateToDesign}
+                        onPress = {this.grabDesignAnswer}
                         textStyle = {styles.cardStyles}
                     />
                 </View >

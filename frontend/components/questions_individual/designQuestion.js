@@ -20,6 +20,8 @@ class DesignQuestion extends Component {
     
 
     render() { 
+        let design = this.props.navigation.getParam('design', 'Couldnt get design');
+        let index = this.props.navigation.getParam('index', 'Couldnt get index');
         return ( 
             <View style = {styles.container}>
                 <View>
@@ -32,9 +34,15 @@ class DesignQuestion extends Component {
                     />
                 </View>
                 </View>
-                <View style = {styles.questionCard}>
-                    <Text style={styles.cardStyles}>HERE IS THE QUESTION3</Text>
-                </View >
+
+          <View>
+            <View style={styles.questionCard} >
+              <Text style={styles.cardStyles}> Question: {design[index].question} </Text>
+            </View>
+            <View style={styles.questionCard}>
+              <Text style={styles.cardStyles}> Answer: {design[index].answer} </Text>
+            </View>
+          </View>
 
 
 
@@ -53,16 +61,16 @@ const styles = StyleSheet.create ({
         alignSelf: 'stretch'
     },
     questionCard:  {
-        marginBottom: 35,
+        marginBottom: 25,
         borderWidth: 1,
-        height: 150,
+        height: 'auto',
         borderColor: 'white',
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center'
     },
     cardStyles: {
-        fontSize: 40,
+        fontSize: 15,
         alignItems: 'center',
         textAlign: 'center',
         color: 'white'

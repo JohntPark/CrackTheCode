@@ -64,8 +64,8 @@ class Puzzle extends Component {
                     <Button
                     style={{ paddingRight: 2}}
                     text = {x.question}
-                    onPress = {(index) => {this.navigateToQuestion(index)}}
-                    textStyle={{color: 'white', fontSize: 10,textAlign: 'center',}}
+                    onPress = {() => {this.navigateToQuestion(index)}}
+                    textStyle={{color: 'white', fontSize: 25,textAlign: 'center',}}
                     />
                     </View >
                     
@@ -95,7 +95,7 @@ const styles = StyleSheet.create ({
     questionCard:  {
         marginBottom: 15,
         borderWidth: 1,
-        height: 150,
+        height: 'auto',
         borderColor: 'white',
         borderRadius: 5,
         alignItems: 'center',
